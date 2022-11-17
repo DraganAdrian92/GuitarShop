@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+
+<% guitars.forEach((guitar) => { %>
+    <%- include('partials/guitar-card', {guitarName: guitar.name, guitarStrings: guitar.guitarStrings}) %>
+    
+<% }) %>
+
+
+<%- include('partials/footer') %>
