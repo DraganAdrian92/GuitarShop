@@ -4,9 +4,7 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const app = express()
 
-mongoose.connect('mongodb://localhost/guitarshop', {
-    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
-})
+
 
 app.set('view engine', 'ejs')
 
@@ -21,4 +19,11 @@ app.get('/', async (req, res) => {
 
 app.use('/articles', articleRouter)
 
-app.listen(3000) 
+
+app.listen(3000)
+
+//Listen on port 3000
+
+    mongoose.connect('mongodb+srv://DraganAdrian:Animal92@cluster0.jtunoft.mongodb.net/test')
+    .then(() => console.log('DB connected'))
+    .catch((error) => console.error('DB connection error!', error));
